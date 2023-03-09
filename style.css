@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=Nunito:wght@400;700&family=Open+Sans:ital,wght@1,300&family=Poppins&family=Roboto&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-position: center;
+    background-size: cover;
+}
+
+li {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: orange;
+}
+
+/* HEADER */
+header {
+    position: relative;
+    padding: 1rem 1.8rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle-btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.active-btn {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+
+.active-btn:hover {
+    scale: 1.05;
+    color: white;
+    box-shadow: 0px 0px 8px rgba(255,255,255,0.3);
+}
+
+.active-btn:active {
+    scale: 0.95;
+}
+
+/* DROPDWON MANU */
+.dropdown__manu {
+   display: none;
+   position: absolute;
+   top: 70px; 
+   right: 2rem;
+   width: 300px;
+   height: 0;
+   background-color: rgba(255,255,255,0.2);
+   backdrop-filter: blur(10px);
+   border-radius: 10px;
+   overflow: hidden;
+   transition: height 0.4s cubic-bezier(0.175, 0.885,0.32,1.275);
+}
+
+.dropdown__manu.open {
+    height: 240px;
+}
+
+.dropdown__manu .active-btn{
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown__manu li {
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN */
+
+section#hero {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    white-space: wrap;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 992px) {
+    .navbar .links,
+    .navbar .active-btn{
+        display: none;
+    }
+
+    .navbar .toggle-btn {
+        display: block;
+    }
+
+    .dropdown__manu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .dropdown__manu {
+        left: 2rem;
+        width: unset;
+    }
+}
