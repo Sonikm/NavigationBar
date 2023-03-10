@@ -9,7 +9,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 200vh;
     background-color: #000;
     background-image: url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-position: center;
@@ -33,11 +33,16 @@ a:hover {
 /* HEADER */
 header {
     position: relative;
-    padding: 1rem 1.8rem;
+    padding: 1rem 1.8rem;   
 }
 
 .navbar {
-    width: 100%;
+    position: fixed;
+    border-radius: 30px;
+    padding: 1rem 1.8rem;   
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    width: 95%;
     height: 60px;
     max-width: 1200px;
     margin: 0 auto;
@@ -141,6 +146,7 @@ section#hero {
 /* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 992px) {
+
     .navbar .links,
     .navbar .active-btn{
         display: none;
@@ -152,6 +158,8 @@ section#hero {
 
     .dropdown__manu {
         display: block;
+        position: fixed;
+        margin-top: 20px;
     }
 }
 
@@ -160,4 +168,8 @@ section#hero {
         left: 2rem;
         width: unset;
     }
+
+    .navbar {
+        width: 90%;
+     }
 }
